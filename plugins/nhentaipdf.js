@@ -2,7 +2,7 @@ let axios = require('axios')
 
 let handler = async (m, { conn, text }) => {
   if (!text) throw 'Cari apa?'
-  let res = await axios.get('http://lolhuman.herokuapp.com/api/nhentai/'+text+'?apikey=f6e4b4dbd303cbc59912740e')
+  let res = await axios.get('http://lolhuman.herokuapp.com/api/nhentai/'+text+'?apikey=NinoWangyy')
   let { title_romaji, title_native, info, image } = res.data.result
   let caption = `
 ${title_romaji}
@@ -29,7 +29,7 @@ Uploaded : ${info.uploaded}
 `
   conn.sendFile(m.chat, image[0], null, caption.trim(), m, false, {thumbnail: Buffer.alloc(0)})
   
-  let data = await axios.get('http://lolhuman.herokuapp.com/api/nhentaipdf/'+text+'?apikey=f6e4b4dbd303cbc59912740e')
+  let data = await axios.get('http://lolhuman.herokuapp.com/api/nhentaipdf/'+text+'?apikey=NinoWangyy')
   conn.sendFile(m.chat, data.data.result, title_romaji, null, m, {asDocument: true, thumbnail: image[0]})
 }
 handler.help = ['nhentaipdf <query>']
