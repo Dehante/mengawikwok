@@ -1,4 +1,5 @@
 let axios = require('axios')
+let fetch = require('node-fetch')
 
 let handler = async (m, { conn, text }) => {
   if (!text) throw 'Cari apa?'
