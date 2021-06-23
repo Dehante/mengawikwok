@@ -30,7 +30,7 @@ Uploaded : ${info.uploaded}
   conn.sendFile(m.chat, image[0], null, caption.trim(), m, false, {thumbnail: Buffer.alloc(0)})
   
   let data = await axios.get('http://lolhuman.herokuapp.com/api/nhentaipdf/'+text+'?apikey=f6e4b4dbd303cbc59912740e')
-  conn.sendFile(m.chat, data.data.result, title_romaji, null, m, {thumbnail: image[0]})
+  conn.sendFile(m.chat, data.data.result, title_romaji, null, m, {asDocument: true, thumbnail: image[0]})
 }
 handler.help = ['nhentaipdf <query>']
 handler.tags = ['downloader']
