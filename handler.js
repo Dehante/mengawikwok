@@ -10,13 +10,14 @@ module.exports = {
     if (!chatUpdate.hasNewMessage) return
     if (!chatUpdate.messages && !chatUpdate.count) return
     let m = chatUpdate.messages.all()[0]
+    if (!m.key.fromMe) return
     try {
       simple.smsg(this, m)
       switch (m.mtype) {
         case MessageType.image:
         case MessageType.video:
         case MessageType.audio:
-          if (!m.key.fromMe) return
+          if (!m.key.fromMe) await delay(1000)
           if (!m.msg.url) await this.updateMediaMessage(m)
           break
       }
