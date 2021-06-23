@@ -34,6 +34,7 @@ Uploaded : ${info.uploaded}
   
 handler.help = ['nhentaipdf <query>']
 handler.tags = ['downloader']
+  
 handler.command = /^nh(pdf|entaipdf)$/i
 
 module.exports = handler
