@@ -8,12 +8,12 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.xteam.xyz': 'd90a9e986e18778b'
+  'https://api.xteam.xyz': 'FuzBot1'
 }
 
 // Sticker WM
-global.packname = 'I hope you\'re fine'
-global.author = 'Nurutomo'
+global.packname = 'tesbot'
+global.author = ''
 
 global.multiplier = 69 // The higher, The harder levelup
 
